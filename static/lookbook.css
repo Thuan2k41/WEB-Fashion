@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+.fix-img {
+  border-radius: 6px 0 60px 0;
+}
+.font-new {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: transparent;
+  font-size: 50px;
+  -webkit-text-stroke: 1px rgb(21, 21, 24);
+  letter-spacing: 2px;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+.card {
+  transition: all 0.3s ease;
+}

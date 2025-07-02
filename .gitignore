@@ -1,0 +1,80 @@
+# ========================================
+# ENVIRONMENT & CONFIGURATION FILES
+# ========================================
+.env
+.env.local
+.env.production
+.env.staging
+config.php
+
+# ========================================
+# COMPOSER DEPENDENCIES
+# ========================================
+/vendor/
+composer.phar
+composer.lock
+
+# ========================================
+# LOGS & TEMPORARY FILES
+# ========================================
+*.log
+logs/
+tmp/
+temp/
+cache/
+
+# ========================================
+# OS GENERATED FILES
+# ========================================
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ========================================
+# IDE & EDITOR FILES
+# ========================================
+# VS Code
+.vscode/
+*.code-workspace
+
+# PhpStorm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# ========================================
+# BACKUP & UPLOAD FILES
+# ========================================
+*.bak
+*.backup
+*.old
+uploads/private/
+backups/
+
+# ========================================
+# NODE MODULES (if using)
+# ========================================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ========================================
+# XAMPP SPECIFIC
+# ========================================
+*.pid
+*.sock
+error.log
+access.log
