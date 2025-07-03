@@ -129,19 +129,11 @@ git clone https://github.com/username/repository-name.git
 
 #### 2. Quản lý files:
 
-```bash
+````bash
 # Xem trạng thái các file
 git status
 
-# Thêm file vào staging area
-git add filename.txt          # Thêm một file cụ thể
 git add .                     # Thêm tất cả files
-git add *.php                 # Thêm tất cả file PHP
-
-# Xóa file khỏi staging area
-git reset filename.txt        # Xóa file khỏi staging
-git reset --hard             # Reset về commit cuối cùng (mất hết thay đổi)
-```
 
 #### 3. Commit (Lưu thay đổi):
 
@@ -149,30 +141,9 @@ git reset --hard             # Reset về commit cuối cùng (mất hết thay 
 # Commit với message
 git commit -m "Mô tả thay đổi"
 
-# Commit và thêm tất cả file đã modified
-git commit -am "Mô tả thay đổi"
-
-# Sửa commit cuối cùng
-git commit --amend -m "Message mới"
-```
-
-#### 4. Xem lịch sử:
-
-```bash
 # Xem lịch sử commit
 git log
-git log --oneline            # Hiển thị ngắn gọn
-git log --graph              # Hiển thị dạng đồ thị
 
-# Xem thay đổi
-git diff                     # So sánh working directory với staging
-git diff --staged            # So sánh staging với commit cuối
-git diff HEAD~1              # So sánh với commit trước đó
-```
-
-#### 5. Branch (Nhánh):
-
-```bash
 # Xem danh sách branch
 git branch                   # Branch local
 git branch -r                # Branch remote
@@ -182,66 +153,17 @@ git branch -a                # Tất cả branch
 git branch feature-login     # Tạo branch mới
 git checkout -b feature-login # Tạo và chuyển sang branch mới
 
-# Chuyển branch
-git checkout main            # Chuyển sang branch main
-git checkout feature-login   # Chuyển sang branch feature-login
 
 # Xóa branch
 git branch -d feature-login  # Xóa branch đã merge
 git branch -D feature-login  # Xóa branch chưa merge (force)
-```
 
-#### 6. Merge (Gộp nhánh):
-
-```bash
 # Merge branch vào branch hiện tại
 git checkout main            # Chuyển sang branch main
 git merge feature-login      # Merge feature-login vào main
 
 # Merge với message
 git merge feature-login -m "Merge feature login"
-```
-
-#### 7. Remote (Làm việc với GitHub):
-
-```bash
-# Thêm remote repository
-git remote add origin https://github.com/username/smart-fashion.git
-
-# Xem danh sách remote
-git remote -v
-
-# Push code lên GitHub
-git push origin main         # Push branch main
-git push origin feature-login # Push branch feature-login
-git push -u origin main      # Push và set upstream
-
-# Pull code từ GitHub
-git pull origin main         # Pull từ branch main
-git pull                     # Pull từ upstream branch
-
-# Fetch (chỉ tải về, không merge)
-git fetch origin
-```
-
-#### 8. Stash (Lưu tạm thời):
-
-```bash
-# Lưu thay đổi hiện tại
-git stash
-git stash save "Mô tả"
-
-# Xem danh sách stash
-git stash list
-
-# Áp dụng stash
-git stash apply              # Áp dụng stash cuối
-git stash apply stash@{0}    # Áp dụng stash cụ thể
-
-# Xóa stash
-git stash drop               # Xóa stash cuối
-git stash clear              # Xóa tất cả stash
-```
 
 ### Quy trình làm việc với GitHub:
 
@@ -261,9 +183,8 @@ git push origin main
 
 #### 2. Làm việc với feature mới:
 
-```bash
 # Bước 1: Tạo branch mới
-git checkout -b feature-payment
+git checkout -b nhanh_phu
 
 # Bước 2: Code và commit
 git add .
@@ -290,12 +211,19 @@ git push origin --delete feature-payment
 # Luôn pull code mới nhất trước khi làm việc
 git pull origin main
 
-# Tạo branch từ main mới nhất
-git checkout -b your-feature
+git pull origin feature-login  # Pull nhánh feature-login từ GitHub
+
+git checkout -b feature-login  # Tạo và chuyển sang nhánh mới
 
 # Push branch để chia sẻ
 git push origin your-feature
 
-# Rebase để có lịch sử sạch
-git rebase main
-```
+git checkout main              # Chuyển sang nhánh main
+git merge feature-login        # Merge nhánh feature-login vào main
+git push origin main           # ĐẨY nhánh chính lên git khi đã merge
+
+# Xóa nhánh sau khi merge
+git branch -d feature-new
+git push origin --delete feature-new
+
+````
