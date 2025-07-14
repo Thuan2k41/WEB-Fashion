@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 23, 2025 lúc 01:50 PM
+-- Thời gian đã tạo: Th7 13, 2025 lúc 06:29 PM
 -- Phiên bản máy phục vụ: 10.4.32-MariaDB
 -- Phiên bản PHP: 8.0.30
 
@@ -46,7 +46,8 @@ INSERT INTO `address` (`id`, `user_id`, `detail`, `ward`, `district`, `province`
 (16, 19, 'dd', 'Phường Phúc Xá', 'Quận Ba Đình', 'Thành phố Hà Nội', 1),
 (17, 6, 'Ngõ 30,Ngô Quyền', 'Phường Phúc Xá', 'Quận Ba Đình', 'Thành phố Hà Nội', 1),
 (18, 24, 'Ngõ 30,Ngô Quyền', 'Phường La Khê', 'Quận Hà Đông', 'Thành phố Hà Nội', 1),
-(21, 28, 'ngo 30 ', 'Phường Phương Liệt', 'Quận Thanh Xuân', 'Thành phố Hà Nội', 1);
+(21, 28, 'ngo 30 ', 'Phường Phương Liệt', 'Quận Thanh Xuân', 'Thành phố Hà Nội', 1),
+(22, 29, 'xóm 5', 'Phường Phúc Xá', 'Quận Ba Đình', 'Thành phố Hà Nội', 1);
 
 -- --------------------------------------------------------
 
@@ -71,8 +72,7 @@ INSERT INTO `cart` (`id`, `user_id`, `product_id`, `quantity`, `size_id`, `creat
 (25, 6, 7, 1, 8, '2025-05-09 03:27:55'),
 (27, 6, 6, 1, 8, '2025-05-09 03:35:23'),
 (28, 6, 1, 1, 3, '2025-05-09 03:35:33'),
-(29, 6, 6, 1, 7, '2025-05-09 03:39:22'),
-(91, 24, 14, 1, 3, '2025-05-25 03:45:42');
+(29, 6, 6, 1, 7, '2025-05-09 03:39:22');
 
 -- --------------------------------------------------------
 
@@ -181,7 +181,14 @@ INSERT INTO `orders` (`id`, `user_id`, `order_date`, `total_price`, `status`, `p
 (66, 24, '2025-05-24', 1890000, 'pending', 'Thanh toán khi nhận hàng'),
 (67, 24, '2025-05-24', 1890000, 'pending', 'Thanh toán khi nhận hàng'),
 (68, 24, '2025-05-24', 1490000, 'pending', 'Thanh toán khi nhận hàng'),
-(69, 19, '2025-06-09', 8650000, 'pending', 'Thanh toán khi nhận hàng');
+(69, 19, '2025-06-09', 8650000, 'pending', 'Thanh toán khi nhận hàng'),
+(70, 24, '2025-07-02', 1890000, 'pending', 'Thanh toán khi nhận hàng'),
+(71, 24, '2025-07-02', 1890000, 'pending', 'Thanh toán khi nhận hàng'),
+(72, 24, '2025-07-02', 2190000, 'pending', 'Thanh toán khi nhận hàng'),
+(73, 24, '2025-07-02', 1290000, 'pending', 'Thanh toán khi nhận hàng'),
+(74, 24, '2025-07-02', 1690000, 'pending', 'Thanh toán khi nhận hàng'),
+(75, 19, '2025-07-13', 1990000, 'pending', 'Thanh toán khi nhận hàng'),
+(76, 19, '2025-07-13', 1990000, 'pending', 'Thanh toán khi nhận hàng');
 
 -- --------------------------------------------------------
 
@@ -227,7 +234,13 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `size_id`, `quantity`
 (29, 69, 15, 3, 1, 1490000),
 (30, 69, 15, 2, 2, 1490000),
 (31, 69, 17, 4, 1, 1990000),
-(32, 69, 13, 2, 1, 2190000);
+(32, 69, 13, 2, 1, 2190000),
+(33, 70, 14, 3, 1, 1890000),
+(34, 71, 14, 2, 1, 1890000),
+(35, 72, 13, 3, 1, 2190000),
+(36, 73, 18, 3, 1, 1290000),
+(37, 74, 16, 3, 1, 1690000),
+(38, 75, 17, 2, 1, 1990000);
 
 -- --------------------------------------------------------
 
@@ -265,12 +278,12 @@ INSERT INTO `products` (`id`, `name`, `price`, `quantity`, `subcategory`, `descr
 (10, 'Suede Jacket - Áo khoác sơ mi da lộn', 500000, 50, 3, '- Chất liệu da lộn mềm mại, đều màu, mịn như nhung, đem đến cho người mặc phong cách trẻ trung, cá tính và cảm giác ấm áp vào mùa đông\r\n- Thiết kế áo khoác kiểu dáng sơ mi: cổ đức, áo phối 2 túi hộp, cài bằng hàng khuy phía trước', 'sale', 0, '2025-04-12 23:20:27', NULL),
 (11, 'Wool Jacket - Áo khoác sơ mi dạ lông cừu', 2999500, 50, 3, 'Chất liệu 100% lông cừu cao cấp đã qua kiểm định chất lượng nghiêm ngặt với công đoạn xử lý thủ công hàng trăm giờ đồng hồ. Chất vải dạ ép từ những sợi lông cừu được chất lọc ở những vị trí lông tốt nhất. Đặc tính chất liệu mềm, mỏng, nhẹ và giữ ấm tuyệt đối; khả năng giữ phom dáng và tuổi thọ của sản phẩm cao.', 'sale', 0, '2025-04-12 23:20:27', NULL),
 (12, 'Áo Hoodie nỉ cổ mũ kéo khóa', 400000, 50, 3, '- Chất liệu: Sử dụng vải Interlock thành phần gồm 65% Cotton, 30% Polyester, 5% Spandex. Đây là sự kết hợp giữa sợi cotton và sợi chiết suất tổng hợp có độ co giãn đàn hồi cao. Tính năng chống gió, cách nhiệt giữ ấm cơ thể.', 'sale', 0, '2025-04-12 23:20:27', NULL),
-(13, 'White Flare Dress - Đầm xòe Tuytsi', 2190000, 40, 4, 'White Flare Dress mang đến vẻ đẹp thanh lịch và tinh tế với thiết kế ôm nhẹ thân trên kết hợp dáng chân xòe nhẹ nhàng.\n\nChất liệu tuytsi cao cấp cùng họa tiết vân hoa tinh tế không chỉ tạo hiệu ứng thị giác đẹp mắt mà còn mang lại cảm giác thoải mái khi mặc.', 'new', 2, '2025-04-12 23:20:27', NULL),
-(14, 'Midsummer Glow Dress - Đầm Lụa Tay Hến', 1890000, 50, 4, 'Giữa ngày hè rực rỡ ngập tràn ánh nắng, Midsummer Glow Dress mang đến vẻ đẹp nữ tính, thanh thoát nhưng vẫn đầy cuốn hút. Với chất liệu lụa mềm mại và thiết kế tối giản, chiếc đầm giúp nàng tỏa sáng tự nhiên như ánh hoàng hôn mùa hè.', 'new', 1, '2025-04-12 23:20:27', 1),
+(13, 'White Flare Dress - Đầm xòe Tuytsi', 2190000, 40, 4, 'White Flare Dress mang đến vẻ đẹp thanh lịch và tinh tế với thiết kế ôm nhẹ thân trên kết hợp dáng chân xòe nhẹ nhàng.\n\nChất liệu tuytsi cao cấp cùng họa tiết vân hoa tinh tế không chỉ tạo hiệu ứng thị giác đẹp mắt mà còn mang lại cảm giác thoải mái khi mặc.', 'new', 3, '2025-04-12 23:20:27', NULL),
+(14, 'Midsummer Glow Dress - Đầm Lụa Tay Hến', 1890000, 50, 4, 'Giữa ngày hè rực rỡ ngập tràn ánh nắng, Midsummer Glow Dress mang đến vẻ đẹp nữ tính, thanh thoát nhưng vẫn đầy cuốn hút. Với chất liệu lụa mềm mại và thiết kế tối giản, chiếc đầm giúp nàng tỏa sáng tự nhiên như ánh hoàng hôn mùa hè.', 'new', 3, '2025-04-12 23:20:27', 1),
 (15, 'Đầm Lụa Xoè Bloom Cách Điệu', 1490000, 50, 4, 'Thiết kế nằm trong BST Dreamy Bloom, người bạn đồng hành hoàn hảo của phái đẹp. Đầm lụa cách điệu là sự lựa chọn hoàn hảo để bạn luôn tự tin và nổi bật với vẻ đẹp thanh lịch, cuốn hút và đầy phong cách!', 'new', 28, '2025-04-12 23:20:27', 2),
-(16, 'Đầm Hai Dây Nhún Ngực', 1690000, 50, 4, 'Thiết kế được may trên nền vải linen mềm mại, ôm nhẹ lấy cơ thể, tạo cảm giác êm ái và thoải mái mỗi khi diện. Kiểu dáng maxi mang đến vẻ ngoài sang trọng, với thiết kế hai dây cho phép bạn thoải mái di chuyển và thuận tiện cho mọi chuyển động.', 'new', 0, '2025-04-12 23:20:27', NULL),
-(17, 'Sonata Vest - Áo Vest Ôm Tuytsi', 1990000, 50, 5, 'Bên cạnh những thiết kế có hoạ tiết bắt mắt, BST Blue Sonata còn chinh phục phái đẹp bằng sự tối giản vô cùng cuốn hút! Với gam màu trung tính, những items như đầm, chân váy hay combo áo vest - quần suông vẫn có thể phối linh hoạt trong nhiều dịp.', 'new', 4, '2025-04-12 23:20:27', NULL),
-(18, 'Chân váy xếp ly Youthful', 1290000, 50, 6, 'Youthful Set với thiết kế trẻ trung, hiện đại nhưng vẫn thời thượng và sang trọng dành cho nàng công sở thêm vào tủ đồ Xuân - Hè của mình. Set bộ gồm áo vest kiểu kết hợp cùng chân váy xếp ly.\r\n\r\nChân váy xếp ly độ dài qua gối, tạo độ bồng nhẹ, đặc biệt che khuyết điểm cực tốt. Thiết kế mix cùng MS', 'new', 3, '2025-04-12 23:20:27', 2),
+(16, 'Đầm Hai Dây Nhún Ngực', 1690000, 50, 4, 'Thiết kế được may trên nền vải linen mềm mại, ôm nhẹ lấy cơ thể, tạo cảm giác êm ái và thoải mái mỗi khi diện. Kiểu dáng maxi mang đến vẻ ngoài sang trọng, với thiết kế hai dây cho phép bạn thoải mái di chuyển và thuận tiện cho mọi chuyển động.', 'new', 1, '2025-04-12 23:20:27', NULL),
+(17, 'Sonata Vest - Áo Vest Ôm Tuytsi', 1990000, 50, 5, 'Bên cạnh những thiết kế có hoạ tiết bắt mắt, BST Blue Sonata còn chinh phục phái đẹp bằng sự tối giản vô cùng cuốn hút! Với gam màu trung tính, những items như đầm, chân váy hay combo áo vest - quần suông vẫn có thể phối linh hoạt trong nhiều dịp.', 'new', 5, '2025-04-12 23:20:27', NULL),
+(18, 'Chân váy xếp ly Youthful', 1290000, 50, 6, 'Youthful Set với thiết kế trẻ trung, hiện đại nhưng vẫn thời thượng và sang trọng dành cho nàng công sở thêm vào tủ đồ Xuân - Hè của mình. Set bộ gồm áo vest kiểu kết hợp cùng chân váy xếp ly.\r\n\r\nChân váy xếp ly độ dài qua gối, tạo độ bồng nhẹ, đặc biệt che khuyết điểm cực tốt. Thiết kế mix cùng MS', 'new', 4, '2025-04-12 23:20:27', 2),
 (30, 'Áo Gile Tuysi Cổ kiểu', 1390000, 50, 5, 'Thiết kế công sở hiện đại, ghi dấu ấn với tính thẩm mỹ cao cùng sự tinh tế qua các chi tiết tạo điểm nhấn mà không mất đi nét sang trọng vốn có.', 'sale', 0, '2025-05-14 11:11:09', NULL);
 
 -- --------------------------------------------------------
@@ -579,10 +592,10 @@ INSERT INTO `users` (`id`, `username`, `password`, `phone`, `email`, `role`, `bi
 (6, 'thanh nguyen', '$2y$10$PFUq4T0oSbnBN2cPiImVceZCQm10ucSuy9OvI896W0UIdHjTjTlwy', '0372119847', 'thanhdz@gmail.com', 'user', '2025-05-09', 'Nam', NULL, NULL),
 (7, 'tuan', '$2y$10$KdKacQ1JCyp3tNWZMIsO5e5TilQTVs9.Bnbql2f.58q2VdTDINLGi', '0123456789', 'tuan11@gmail.com', 'user', '2025-04-09', 'Nam', NULL, NULL),
 (8, 'tuan1', '$2y$10$tnqT5GS.SpAUt5p15ZtAb.UyxZQp9cv5VdswJdBWCE3y7ssNvMGxi', '0999999229', 'hahaha@gmail.com', 'user', NULL, 'Khác', NULL, NULL),
-(19, 'thuan2412004', '$2y$10$y.6f/1g.cC3MRt9WrrT6/uoK.FkJdbC/zkT1wHrVWpyR4.aVbaicu', '0389468847', 'thuan2412004@gmail.com', 'user', '2025-05-08', 'Nam', NULL, NULL),
+(19, 'thuan2412004', '$2y$10$EUlrWc6pLfAsySKkknJ0iOrGLmvdANCwek6e.wsz5W9.FhHUrNjqy', '0389468847', 'thuan2412004@gmail.com', 'user', '2025-05-08', 'Nam', NULL, NULL),
 (24, 'Hai Thanh', '$2y$10$CMV70eqnnLTMoRguKxegMulnCix48V/Zj/NqDPGIWzE4jEaMnEBa.', '0333333333', 'thanh114466@gmail.com', 'admin', '2025-05-03', 'Nam', '2e91a6b0d54e18962ca957c987df1464edefa543d5d6fa2ffbb44e2a567f0329185181a70ec801c0080f95c5a05d89b4f1c6', '2025-05-15 18:30:02'),
 (28, 'nhung0507kk', '', '0333333333', 'nhung0507kk@gmail.com', 'user', NULL, '', '242126d81f5a7fda6fc8b7c327b9d2230a43463f95a71f11bb43d390a277e3cdebe54d00f7cc5707d9421609a57c96adbb24', '2025-05-14 17:53:24'),
-(29, 'hn4023906', '', '', 'hn4023906@gmail.com', 'user', NULL, '', NULL, NULL);
+(29, 'hn4023906', '$2y$10$pU6KYqJLHreuCIp/89uFnutMDC1MHJ8YM2CPKEFAkJ2jW33qiIL2y', '0333333333', 'hn4023906@gmail.com', 'user', '2025-07-12', 'Nam', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -719,13 +732,13 @@ ALTER TABLE `vouchers`
 -- AUTO_INCREMENT cho bảng `address`
 --
 ALTER TABLE `address`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=95;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
 
 --
 -- AUTO_INCREMENT cho bảng `categories`
@@ -743,13 +756,13 @@ ALTER TABLE `collections`
 -- AUTO_INCREMENT cho bảng `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
 
 --
 -- AUTO_INCREMENT cho bảng `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT cho bảng `products`
